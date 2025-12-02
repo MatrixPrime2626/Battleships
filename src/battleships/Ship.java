@@ -8,9 +8,9 @@ public class Ship {
     private String code;
     private int squareCount;
     private boolean horizontal;
-
     private int x;
     private int y;
+    private int hits;
 
     public Ship(String name, String code, int squareCount) {
         this.name = name;
@@ -63,6 +63,17 @@ public class Ship {
         final Rectangle2D rectOther = new Rectangle2D.Double(other.x, other.y, other.getWidth(), other.getHeight());
         final Rectangle2D intersection = rectThis.createIntersection(rectOther);
         return (intersection.getWidth() >= 0) && (intersection.getHeight() >= 0);
+    }
+
+    public boolean incrementHitCount() {
+        if (this.hits < this.squareCount) {
+            this.hits++;
+        }
+        return (this.hits == this.squareCount);
+    }
+
+    public boolean isSunk() {
+        return (this.hits == this.squareCount);
     }
 
 
