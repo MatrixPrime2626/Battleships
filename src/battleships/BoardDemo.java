@@ -2,9 +2,9 @@ package battleships;
 
 public class BoardDemo {
     public static void main(String[] args) {
-        Board b1 = new Board(10,10);
+        Board b1 = new Board(50,50);
        // b1.setup();
-        for(int i = 0; i < 10; i++) {
+        for(int i = 0; i < 100; i++) {
             b1.placeShip(new Ship("battleship", "B", 5));
         }
 

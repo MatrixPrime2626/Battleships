@@ -1,5 +1,7 @@
 package battleships;
 
+import java.awt.geom.Rectangle2D;
+
 public class Ship {
 
     private String name;
@@ -54,6 +56,13 @@ public class Ship {
         } else {
             return this.squareCount;
         }
+    }
+
+    public boolean overlap(final Ship other) {
+        final Rectangle2D rectThis = new Rectangle2D.Double(this.x, this.y, this.getWidth(), this.getHeight());
+        final Rectangle2D rectOther = new Rectangle2D.Double(other.x, other.y, other.getWidth(), other.getHeight());
+        final Rectangle2D intersection = rectThis.createIntersection(rectOther);
+        return (intersection.getWidth() >= 0) && (intersection.getHeight() >= 0);
     }
 
 
