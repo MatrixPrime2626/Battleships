@@ -4,6 +4,10 @@ public class BoardDemo {
     public static void main(String[] args) {
         Board b1 = new Board(10,10);
        // b1.setup();
+        for(int i = 0; i < 10; i++) {
+            b1.placeShip(new Ship("battleship", "B", 5));
+        }
+
         b1.getSquare(0,0).setTried();
         b1.getSquare(0,1).setTried();
 

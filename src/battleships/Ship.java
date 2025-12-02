@@ -37,6 +37,30 @@ public class Ship {
     public void rotate() {
         this.horizontal = !this.horizontal;
     }
+
+
+
+    public int getWidth() {
+        if (this.horizontal) {
+            return this.squareCount;
+        } else {
+            return 1;
+        }
+    }
+
+    public int getHeight() {
+        if (this.horizontal) {
+            return 1;
+        } else {
+            return this.squareCount;
+        }
+    }
+
+
+
+
+
+
     @Override
     public String toString()  {
         final StringBuilder builder = new StringBuilder();

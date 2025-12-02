@@ -12,6 +12,9 @@ public class Board {
 
     private Square[][] board;
     private final List<Ship> ships = new ArrayList<>();
+
+
+
     public Board(int width, int height) {
         this.width = width;
         this.height = height;
@@ -46,8 +49,8 @@ public class Board {
             ship.rotate();
         }
 
-        final int x = random.nextInt(this.width);
-        final int y = random.nextInt(this.height);
+        final int x = random.nextInt(this.width - ship.getWidth());
+        final int y = random.nextInt(this.height - ship.getHeight());
         ship.setLocation(x, y);
 
         ship.addToBoard(this);
@@ -78,6 +81,9 @@ public class Board {
 //        getSquare(4,3).setShip(s);
 //        getSquare(5,3).setShip(s);
 //    }
+
+
+
     public boolean inBounds(int x, int y) {
         return x >= 0 && y >= 0 && x < this.width && y < this.height;
     }
