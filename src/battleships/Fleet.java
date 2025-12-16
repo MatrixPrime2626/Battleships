@@ -1,8 +1,6 @@
 package battleships;
 
-import battleships.ship.Battleship;
-import battleships.ship.Destroyer;
-import battleships.ship.Submarine;
+import battleships.ship.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,15 +9,21 @@ public class Fleet {
 
     private List<Ship> ships = new ArrayList<>();
 
-    public Fleet(int battleahips, int destroyer, int submarine){
-        for(int i = 0; i < battleahips; i++){
+    public Fleet(int battleships, int destroyers, int submarines, int aeroplanes, int aircraftCarriers){
+        for(int i = 0; i < battleships; i++){
             this.ships.add(new Battleship());
         }
-        for(int i = 0; i < destroyer; i++){
+        for(int i = 0; i < destroyers; i++){
             this.ships.add(new Destroyer());
         }
-        for(int i = 0; i < submarine; i++){
+        for(int i = 0; i < submarines; i++){
             this.ships.add(new Submarine());
+        }
+        for(int i = 0; i < aeroplanes; i++){
+            this.ships.add(new Aeroplane());
+        }
+        for(int i = 0; i < aircraftCarriers; i++){
+            this.ships.add(new AircraftCarrier());
         }
     }
     public List<Ship> getShips() {
