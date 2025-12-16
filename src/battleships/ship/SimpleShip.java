@@ -3,7 +3,7 @@ package battleships.ship;
 import battleships.Board;
 import battleships.Ship;
 
-public class SimpleShip extends Ship {
+public abstract class SimpleShip extends Ship {
 
     private boolean horizontal;
 
