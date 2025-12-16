@@ -12,6 +12,7 @@ public class BoardPanel extends JPanel {
 
     public BoardPanel(Board board) {
         super(new GridLayout(board.getHeight(), board.getWidth()));
+        this.board = board;
         this.boardButtons = new BoardButton[board.getHeight()][board.getWidth()];
         for (int y = 0; y < this.boardButtons.length; y++) {
             final int finalY = y;
