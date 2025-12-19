@@ -12,7 +12,7 @@ public class Board {
 
     private Square[][] board;
     private final List<Ship> ships = new ArrayList<>();
-
+    private Fleet fleet;
 
 
     public Board(int width, int height) {
@@ -39,8 +39,12 @@ public class Board {
         return this.board[y][x];
     }
 
+    public Fleet getFleet() {
+        return this.fleet;
+    }
 
     public void setUp(Fleet fleet) {
+        this.fleet = fleet;
         for(Ship s : fleet.getShips()) {
             placeShip(s);
         }

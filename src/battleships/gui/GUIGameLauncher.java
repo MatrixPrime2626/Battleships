@@ -1,6 +1,9 @@
 package battleships.gui;
 
 import battleships.*;
+import battleships.strategy.BasicStrategy;
+import battleships.strategy.BestStrategy;
+import battleships.strategy.BetterStrategy;
 import battleships.strategy.RandomStrategy;
 
 import javax.swing.*;
@@ -9,12 +12,12 @@ public class GUIGameLauncher {
 
     public static AbstractGame createGame() {
         //Board[] boards = BoardFactory.getBigBoards();
-        //Board[] boards = BoardFactory.getSmallBoards();
-        Board[] boards = BoardFactory.getTinyBoards();
+        Board[] boards = BoardFactory.getSmallBoards();
+        //Board[] boards = BoardFactory.getTinyBoards();
         GUIPlayer player1 = null;
         GUIPlayer player2 = null;
-        final ComputerPlayerStrategy strategy1 = new RandomStrategy();
-        final ComputerPlayerStrategy strategy2 = new RandomStrategy();
+        final ComputerPlayerStrategy strategy1 = new BetterStrategy();
+        final ComputerPlayerStrategy strategy2 = new BestStrategy(boards[0]);
         final GameType gameType = GameType.COMPUTER_V_COMPUTER;
         switch(gameType) {
             case COMPUTER_V_COMPUTER:

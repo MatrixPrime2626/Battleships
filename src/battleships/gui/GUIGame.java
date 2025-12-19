@@ -6,7 +6,7 @@ import battleships.AbstractPlayer;
 import javax.swing.*;
 
 public class GUIGame extends AbstractGame {
-    public static final int DELAY = 200;
+    public static final int DELAY = 100;
     public GUIGame(final AbstractPlayer player1, final AbstractPlayer player2) {
         super(player1, player2);
     }
